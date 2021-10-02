@@ -1,16 +1,6 @@
-import { NotImplementedError } from '../extensions/index.js';
-
-/**
- * Given an email address, return it's domain.
- *
- * @param {String} email
- * @return {String}
- *
- * @example
- * For the input 'prettyandsimple@example.com', the output should be 'example.com'
- *
- */
-export default function getEmailDomain(/* email */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function getEmailDomain(email) {
+  for (let i = email.length - 1; i >= 0; i--) {
+    if (email[i] === '@') return email.substring(i + 1);
+  }
+  return false;
 }
